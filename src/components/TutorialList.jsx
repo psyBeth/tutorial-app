@@ -2,6 +2,8 @@ import { AiFillDelete } from "react-icons/ai"
 import { FaEdit } from "react-icons/fa"
 
 const TutorialList = () => {
+
+  // mock data
   const tutorials = [
     {
       id: 1,
@@ -11,6 +13,11 @@ const TutorialList = () => {
     {
       id: 2,
       title: "React",
+      description: "JS library for UI design",
+    },
+    {
+      id: 3,
+      title: "SolidJS",
       description: "JS library for UI design",
     },
   ]

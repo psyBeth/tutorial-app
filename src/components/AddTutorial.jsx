@@ -4,7 +4,9 @@ const AddTutorial = () => {
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
 
-  const handleSubmit = (e) => {}
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
 
   return (
     <div className="container text-center mt-4">
