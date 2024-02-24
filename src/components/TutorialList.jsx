@@ -3,7 +3,7 @@ import { FaEdit } from "react-icons/fa"
 
 const TutorialList = () => {
 
-  // mock data
+  //* mock data
   const tutorials = [
     {
       id: 1,
