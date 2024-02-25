@@ -8,9 +8,13 @@ const Home = () => {
   const [tutorials, setTutorials] = useState([])
 
   const getTutorials = async () => {
+  try {
     const URL = "https://tutorial-api.fullstack.clarusway.com/tutorials"
     const res = await axios(URL)
     setTutorials(res.data);
+  } catch (error) {
+    console.log(error);
+  }
   }
 
   //? request must be made during the mount phase
@@ -18,11 +22,12 @@ const Home = () => {
     getTutorials()
   }, [])
   
+  console.log(tutorials);
 
   return (
     <>
       <AddTutorial />
-      <TutorialList />
+      <TutorialList tutorials={tutorials}/>
     </>
   );
 };
