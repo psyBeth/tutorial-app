@@ -9,7 +9,7 @@ const Home = () => {
 
   const getTutorials = async () => {
   try {
-    const URL = "https://tutorial-api.fullstack.clarusway.com/tutorials"
+    const URL = "https://tutorial-api.fullstack.clarusway.com/tutorials/"
     const res = await axios(URL)
     setTutorials(res.data);
   } catch (error) {
