@@ -1,6 +1,7 @@
 import { AiFillDelete } from "react-icons/ai"
 import { FaEdit } from "react-icons/fa"
 import axios from "axios"
+import EditTutorial from "./EditTutorial"
 
 const TutorialList = ({tutorials, getTutorials}) => {
 
@@ -59,6 +60,8 @@ const TutorialList = ({tutorials, getTutorials}) => {
                     size={20}
                     type="button"
                     className="me-2 text-warning"
+                    data-bs-toggle = "modal"
+                    data-bs-target = "#open-modal"
                   />
                   <AiFillDelete
                     size={22}
@@ -72,6 +75,7 @@ const TutorialList = ({tutorials, getTutorials}) => {
           })}
         </tbody>
       </table>
+      <EditTutorial />
     </div>
   )
 }
