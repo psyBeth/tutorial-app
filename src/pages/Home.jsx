@@ -9,8 +9,8 @@ const Home = () => {
 
   const getTutorials = async () => {
   try {
-    const URL = "https://tutorial-api.fullstack.clarusway.com/tutorials/"
-    const res = await axios(URL)
+    // const URL = "https://tutorial-api.fullstack.clarusway.com/tutorials/"
+    const res = await axios(process.env.REACT_APP_URL)
     setTutorials(res.data);
   } catch (error) {
     console.log(error);
@@ -27,7 +27,7 @@ const Home = () => {
   return (
     <>
       <AddTutorial getTutorials={getTutorials}/>
-      <TutorialList tutorials={tutorials}/>
+      <TutorialList tutorials={tutorials} getTutorials={getTutorials}/>
     </>
   );
 };
