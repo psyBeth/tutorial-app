@@ -1,9 +1,11 @@
 import React from 'react'
 import { useState } from 'react';
 
-const EditTutorial = () => {
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
+const EditTutorial = ({editData}) => {
+    const {title: oldTitle, description: oldDescription} = editData
+
+    const [title, setTitle] = useState(oldTitle);
+    const [description, setDescription] = useState(oldDescription);
   return (
     <>
         <div

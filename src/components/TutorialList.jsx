@@ -2,8 +2,10 @@ import { AiFillDelete } from "react-icons/ai"
 import { FaEdit } from "react-icons/fa"
 import axios from "axios"
 import EditTutorial from "./EditTutorial"
+import {useState} from 'react'
 
 const TutorialList = ({tutorials, getTutorials}) => {
+  const [editData,setEditData] = useState("");
 
   //* mock data
   // const tutorials = [
@@ -34,6 +36,8 @@ const TutorialList = ({tutorials, getTutorials}) => {
     getTutorials()
   }
 
+  console.log(editData);
+
   return (
     <div className="container mt-4">
       <table className="table table-striped">
@@ -62,6 +66,7 @@ const TutorialList = ({tutorials, getTutorials}) => {
                     className="me-2 text-warning"
                     data-bs-toggle = "modal"
                     data-bs-target = "#open-modal"
+                    onClick = {() => setEditData(item)}
                   />
                   <AiFillDelete
                     size={22}
@@ -75,7 +80,7 @@ const TutorialList = ({tutorials, getTutorials}) => {
           })}
         </tbody>
       </table>
-      <EditTutorial />
+      <EditTutorial editData={editData} />
     </div>
   )
 }
