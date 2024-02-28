@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 
 const EditTutorial = ({editData}) => {
@@ -6,6 +6,14 @@ const EditTutorial = ({editData}) => {
 
     const [title, setTitle] = useState(oldTitle);
     const [description, setDescription] = useState(oldDescription);
+    // console.log(title);
+
+    //? componentDidUpdate
+    useEffect(() => {
+      setTitle(oldTitle);
+      setDescription(oldDescription);
+    }, [oldTitle, oldDescription]);
+    
   return (
     <>
         <div
