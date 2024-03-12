@@ -38,5 +38,13 @@ const todoSchema = new mongoose.Schema(
     },
 );
 
+todoSchema.set("toJSON", {
+    transform: (doc, ret) => {
+        ret.id = ret._id;
+        delete ret._id;
+        // ret.createdAt = ret.createdAt.toLocaleString("tr-tr")
+    }
+})
+
 const Todo = mongoose.model("Todo", todoSchema);
 module.exports ={Todo}
