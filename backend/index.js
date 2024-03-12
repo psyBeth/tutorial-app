@@ -2,14 +2,19 @@
 
 require('express-async-errors');
 require('dotenv').config()
+
+const { todoRouter } = require('./routes/todo.route');
 const {mongooseConnection} = require('./startup/mongooseConnection')
 
 const express = require("express");
 const PORT = process.env?.PORT || 8000;
 
 const app = express();
+app.use(express.json())  //parse
 
-app.use(require('./middlewares/errorHandler'))
+app.use(todoRouter);
+
+app.use(require('./middlewares/errorHandler'));
 
 mongooseConnection();
 
