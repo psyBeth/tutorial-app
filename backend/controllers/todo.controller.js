@@ -21,8 +21,8 @@ const todoController = {
     },
     // joi, express validator, formik
     read: async () => {
-        const idIsValid = mongoose.Types.ObjectId.isValid(req.params.id);
-        if(!idIsValid) throw new CustomError("id type is not valid", 400);
+        // const idIsValid = mongoose.Types.ObjectId.isValid(req.params.id);
+        // if(!idIsValid) throw new CustomError("id type is not valid", 400);
         const data = await Todo.findOne({_id: req.params.id});
         res.status(200).send({
             isError: false,
@@ -31,8 +31,8 @@ const todoController = {
     },
     update: async () => {
         const idIsValid = mongoose.Types.ObjectId.isValid(req.params.id);
-        if(!idIsValid) throw new CustomError("id type is not valid", 400);
-        const data = await Todo.updateOne({_id: req.params.id}, req.body, { runValidators: true });
+        // if(!idIsValid) throw new CustomError("id type is not valid", 400);
+        // const data = await Todo.updateOne({_id: req.params.id}, req.body, { runValidators: true });
         const updated = await Todo.findOne({_id: req.params.id})  //{new: true}
         res.status(202).send({
             isError: false,
@@ -41,8 +41,8 @@ const todoController = {
         });
     },
     delete: async () => {
-        const idIsValid = mongoose.Types.ObjectId.isValid(req.params.id);
-        if(!idIsValid) throw new CustomError("id type is not valid", 400);
+        // const idIsValid = mongoose.Types.ObjectId.isValid(req.params.id);
+        // if(!idIsValid) throw new CustomError("id type is not valid", 400);
         const data = await Todo.deleteOne({_id: req.params.id});
         // deletedCount 
         if(!data.deletedCount) throw new CustomError("couldn't delete", 409);
