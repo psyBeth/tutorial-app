@@ -6,5 +6,5 @@ module.exports = (err, req, res, next) => {
         isError: true,
         message: err.message,
         body: req.body
-    })
+    });
 };
