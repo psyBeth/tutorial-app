@@ -6,26 +6,7 @@ import {useState} from 'react'
 
 const TutorialList = ({tutorials, getTutorials}) => {
   const [editData,setEditData] = useState("");
-
-  //* mock data
-  // const tutorials = [
-  //   {
-  //     id: 1,
-  //     title: "JS",
-  //     description: "JS is a programming language",
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "React",
-  //     description: "JS library for UI design",
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "SolidJS",
-  //     description: "JS library for UI design",
-  //   },
-  // ]
-
+  
   const deleteTutorial = async (id) => {
     try {
       const res = await axios.delete(`${process.env.REACT_APP_URL} ${id}/`)
